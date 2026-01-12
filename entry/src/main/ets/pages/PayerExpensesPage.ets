@@ -6,7 +6,7 @@ import {
   ArcListItem,
   ArcListAttribute,
   ArcListItemAttribute,
-  ComponentContent,
+  ComponentContent
 } from '@kit.ArkUI';
 import { Expense } from '../model/Expense';
 import { SizeConstants } from '../constants/SizeConstants';

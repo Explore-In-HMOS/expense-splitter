@@ -3,5 +3,5 @@ export interface Expense {
   tripId: number;
   payerName: string,
   amount: number,
-  day: number,
+  day: number
 }

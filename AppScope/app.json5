@@ -1,6 +1,6 @@
 {
   "app": {
-    "bundleName": "com.hmosdemos.expense_splitter",
+    "bundleName": "com.hmosdemos.wearable.expense_splitter",
     "vendor": "hmosdemos",
     "versionCode": 1000000,
     "versionName": "1.0.0",

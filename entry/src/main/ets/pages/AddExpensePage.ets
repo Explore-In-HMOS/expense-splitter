@@ -77,7 +77,7 @@ struct AddExpensePage {
             onClick: () => {
               this.payers = this.payers.map((opt) => {
                 return copyLabelOption(opt, {
-                  selected: opt.label === option.label ? !opt.selected : false,
+                  selected: opt.label === option.label ? !opt.selected : false
                 });
               });
             }
@@ -106,7 +106,7 @@ struct AddExpensePage {
             onClick: () => {
               this.daysOptions = this.daysOptions.map((opt) => {
                 return copyLabelOption(opt, {
-                  selected: opt.label === option.label ? !opt.selected : opt.selected,
+                  selected: opt.label === option.label ? !opt.selected : opt.selected
                 });
               });
             }

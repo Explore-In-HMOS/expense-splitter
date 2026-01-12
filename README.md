@@ -76,7 +76,7 @@ This allows separation of concerns and improved testability for components like:
 - `AppDatabase` with it's implementation class `AppDatabaseImpl`
 - ViewModels and utilities
 
-# Project Directory
+# Directory Structure
 
 ```
 ├── entry/src/main/ets/
@@ -126,7 +126,7 @@ This allows separation of concerns and improved testability for components like:
 
 - Huawei Watch 5
 
-# LICENSE
+# License
 
 **Expense Splitter** is distributed under the terms of the MIT License.
 See the [license](/LICENSE) for more information.

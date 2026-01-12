@@ -10,5 +10,5 @@ const MIGRATION_2_3 = new RDBMigration(2, 3, async (store) => {
 
 export const MIGRATIONS: RDBMigration[] = [
   MIGRATION_1_2,
-  MIGRATION_2_3,
+  MIGRATION_2_3
 ];

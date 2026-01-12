@@ -9,7 +9,7 @@ import {
   ArcButton,
   ArcButtonOptions,
   ArcButtonStyleMode,
-  ColorMetrics,
+  ColorMetrics
 } from '@kit.ArkUI';
 import { TripDetailsCard } from '../components/TripDetailsCard';
 import { SizeConstants } from '../constants/SizeConstants';
@@ -118,7 +118,7 @@ struct TripsPage {
                   this.viewModel.deleteTrip(trip);
                 })
               },
-              actionAreaDistance: 56,
+              actionAreaDistance: 56
             }
           })
         }, (expense: Trip, index: number) => `${expense.id}-${index}`)

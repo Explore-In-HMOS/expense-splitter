@@ -48,7 +48,7 @@ export class RDBBuilder {
       throw new Error('No migrations provided.');
     }
 
-    // Check first migration starts at 1 (or 0 if including initial)
+    // Check first migration starts at 1 or 0 when including initial
     if (this.migrations[0].fromVersion !== 1) {
       throw new Error(`First migration must start at version 1, got ${this.migrations[0].fromVersion}`);
     }
@@ -93,7 +93,7 @@ export class RDBBuilder {
   public async build(context: Context): Promise<relationalStore.RdbStore> {
     const store = await relationalStore.getRdbStore(context, {
       name: this.rdbName,
-      securityLevel: relationalStore.SecurityLevel.S1,
+      securityLevel: relationalStore.SecurityLevel.S1
     });
     // Fresh DB? Run creation queries once (version 0)
     if (store.version === 0) {

@@ -45,7 +45,7 @@ const TRIP_OPTIONS: LabelOption[] = [
   {
     label: TripType.ShoppingDay,
     selected: false
-  },
+  }
 ]
 
 const DAYS_OPTIONS: LabelOption[] = [
@@ -72,7 +72,7 @@ const DAYS_OPTIONS: LabelOption[] = [
   {
     label: '6',
     selected: false
-  },
+  }
 ]
 
 

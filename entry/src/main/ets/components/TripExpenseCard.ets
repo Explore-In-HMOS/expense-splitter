@@ -52,7 +52,7 @@ export struct TripExpenseCard {
               .backgroundColor($r('app.color.brand_color'))
               .textAlign(TextAlign.Center)
               .borderRadius($r('app.float.margin_24'))
-          }, (day: number, index) => `${day}-${index}`)
+          }, (day: number) => day.toString())
         }
 
         .alignItems(VerticalAlign.Center)

@@ -9,7 +9,7 @@ export enum TripType {
   MovieNight = 'Movie Night',
   PartyNight = 'Party Night',
   BusinessLunch = 'Business Lunch',
-  ShoppingDay = 'Shopping Day',
+  ShoppingDay = 'Shopping Day'
 }
 
 const TRIP_TYPE_VALUES: readonly TripType[] = [
@@ -22,10 +22,14 @@ const TRIP_TYPE_VALUES: readonly TripType[] = [
   TripType.MovieNight,
   TripType.PartyNight,
   TripType.BusinessLunch,
-  TripType.ShoppingDay,
+  TripType.ShoppingDay
 ];
 
-// Convert string → enum (safe)
+/**
+ * Convert string to enum safely
+ * @param value
+ * @returns { TripType }
+ */
 export function toTripType(value: string): TripType {
   return (TRIP_TYPE_VALUES as readonly string[]).includes(value) ? (value as TripType) : TripType.Unknown;
 }

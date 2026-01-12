@@ -75,11 +75,11 @@ export function Resolve<T extends Injectable>(cls: Constructor<T>, options: { na
           value: instance,
           writable: false,
           configurable: false,
-          enumerable: true,
+          enumerable: true
         });
 
         return instance;
-      },
+      }
     })
   }
 }

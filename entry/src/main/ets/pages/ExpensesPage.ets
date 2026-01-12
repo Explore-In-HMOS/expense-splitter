@@ -9,7 +9,7 @@ import {
   ArcButton,
   ArcButtonOptions,
   ArcButtonStyleMode,
-  ColorMetrics,
+  ColorMetrics
 } from '@kit.ArkUI';
 import { SizeConstants } from '../constants/SizeConstants';
 import ExpensesViewModel from '../viewmodel/ExpensesViewModel';
@@ -174,7 +174,7 @@ struct ExpensesPage {
                       this.updateHeader();
                     })
                   },
-                  actionAreaDistance: 56,
+                  actionAreaDistance: 56
                 }
               })
             }, (expense: TripExpenses, index: number) => `${expense.payerName}-${index}-${expense.totalAmount}}`)

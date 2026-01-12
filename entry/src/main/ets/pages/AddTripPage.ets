@@ -59,7 +59,7 @@ struct AddTripPage {
             onClick: () => {
               this.tripOptions = this.tripOptions.map((opt) => {
                 return copyLabelOption(opt, {
-                  selected: opt.label === option.label ? !opt.selected : false,
+                  selected: opt.label === option.label ? !opt.selected : false
                 });
               });
             }
@@ -88,7 +88,7 @@ struct AddTripPage {
             onClick: () => {
               this.daysOptions = this.daysOptions.map((opt) => {
                 return copyLabelOption(opt, {
-                  selected: opt.label === option.label ? !opt.selected : false,
+                  selected: opt.label === option.label ? !opt.selected : false
                 });
               });
             }

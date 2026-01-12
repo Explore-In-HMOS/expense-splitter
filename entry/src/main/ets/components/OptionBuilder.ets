@@ -9,7 +9,7 @@ export interface CopyLabelOption {
   label?: string,
   selected?: boolean,
   color?: ResourceColor,
-  selectedColor?: ResourceColor,
+  selectedColor?: ResourceColor
 }
 
 export function copyLabelOption(
@@ -20,7 +20,7 @@ export function copyLabelOption(
     label: copyOptions.label ?? labelOption.label,
     selected: copyOptions.selected ?? labelOption.selected,
     color: copyOptions.color ?? labelOption.color,
-    selectedColor: copyOptions.selectedColor ?? labelOption.selectedColor,
+    selectedColor: copyOptions.selectedColor ?? labelOption.selectedColor
   }
 }
 

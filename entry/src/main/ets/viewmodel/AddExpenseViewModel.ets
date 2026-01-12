@@ -79,7 +79,7 @@ export default class AddExpenseViewModel {
     for (let i = 0; i < daysCount; i++) {
       daysOptions.push({
         label: (i + 1).toString(),
-        selected: false,
+        selected: false
       })
     }
     return daysOptions;

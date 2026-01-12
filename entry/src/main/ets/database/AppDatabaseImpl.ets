@@ -69,15 +69,16 @@ export class AppDatabaseImpl extends AppDatabase {
       }
 
       const results: Trip[] = [];
+      const startDate = new Date();
       while (resultSet.goToNextRow()) {
-        const startDate = new Date(resultSet.getLong(resultSet.getColumnIndex('start_date')));
+        startDate.setTime(resultSet.getLong(resultSet.getColumnIndex('start_date')))
         const days = resultSet.getLong(resultSet.getColumnIndex('days'));
         const trip: Trip = {
           id: resultSet.getLong(resultSet.getColumnIndex('id')),
           template: toTripType(resultSet.getString(resultSet.getColumnIndex('template'))),
           startDate: startDate.toLocaleDateString(),
           endDate: days > 1 ? this.addDays(startDate, days - 1).toLocaleDateString() : undefined,
-          days: days,
+          days: days
         };
         results.push(trip);
       }
@@ -100,7 +101,7 @@ export class AppDatabaseImpl extends AppDatabase {
     try {
       const resultSet = await database?.query(predicates, EXPENSES_TABLE.columns);
       if (!resultSet || resultSet.rowCount === 0) {
-        return;
+        return undefined;
       }
 
       let expense: Expense | undefined;
@@ -110,12 +111,12 @@ export class AppDatabaseImpl extends AppDatabase {
           tripId: resultSet.getLong(resultSet.getColumnIndex('trip_id')),
           payerName: resultSet.getString(resultSet.getColumnIndex('payer_name')),
           amount: resultSet.getDouble(resultSet.getColumnIndex('amount')),
-          day: resultSet.getLong(resultSet.getColumnIndex('day')),
+          day: resultSet.getLong(resultSet.getColumnIndex('day'))
         };
       }
       return expense;
     } catch (e) {
-      return;
+      return undefined;
     }
   }
 
@@ -138,7 +139,7 @@ export class AppDatabaseImpl extends AppDatabase {
       const payerExpense = await this.payerExpenseInDay(tripId, payerName, days[i]);
       if (payerExpense) {
         const valueBucket: relationalStore.ValuesBucket = {
-          'amount': payerExpense.amount + paymentInADay,
+          'amount': payerExpense.amount + paymentInADay
         };
         const predicates = new relationalStore.RdbPredicates(EXPENSES_TABLE.tableName)
           .equalTo('id', payerExpense.id)
@@ -151,7 +152,7 @@ export class AppDatabaseImpl extends AppDatabase {
           'trip_id': tripId,
           'payer_name': payerName,
           'amount': paymentInADay,
-          'day': days[i],
+          'day': days[i]
         };
         const expenseId = await database.insert(EXPENSES_TABLE.tableName, valueBucket);
         expensesIds.push(expenseId);
@@ -217,7 +218,7 @@ export class AppDatabaseImpl extends AppDatabase {
           tripId: resultSet.getLong(resultSet.getColumnIndex('trip_id')),
           payerName: resultSet.getString(resultSet.getColumnIndex('payer_name')),
           amount: resultSet.getDouble(resultSet.getColumnIndex('amount')),
-          day: resultSet.getLong(resultSet.getColumnIndex('day')),
+          day: resultSet.getLong(resultSet.getColumnIndex('day'))
         };
         results.push(trip);
       }
